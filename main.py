@@ -13,8 +13,10 @@ import XGBoost
 
 # Step 1: Authenticate user and fetch Spotify data
 print("🎵 Running Spotify API script...")
-# os.system("python3 spotify_api.py")
-#spotify_api.get_top_artist_genre()
+
+# Uncomment below to run the Spotify API script:
+    # Requires user authentication from the authors (Arzoo and Brent) that once you are logged in, you can run the script without needing to re-authenticate.
+# spotify_api.get_top_artist_genre()
 
 # Check if the Spotify data file was created
 if not os.path.exists("spotify_data.json"):
@@ -24,7 +26,6 @@ print("Spotify data fetched successfully.")
 
 # Step 2: Get concert and Airbnb data using Ticketmaster and Google Maps API
 print("🎤 Running Ticketmaster and initial Google Maps script...")
-# os.system("python3 ticketmaster_api.py")
 
 spotify_data = ticketmaster_api.read_spotify()
 if spotify_data:
@@ -62,10 +63,6 @@ print("Step 4: Running XGBoost model and generating recommendations...")
 XGBoost.run_xgboost_model(df.iloc[0]['event_name'] if 'event_name' in df.columns else "an upcoming concert")
 
 print("Step 5: Running DNN model and generating recommendations...")
-
-# dnn.run_dnn_model(df.iloc[0]['event_name'] if 'event_name' in df.columns else "an upcoming concert")
-
-
 
 # Step 5: Open the HTML report with top Airbnb links
 
