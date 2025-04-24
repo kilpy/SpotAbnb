@@ -5,14 +5,17 @@ from dotenv import load_dotenv
 from googlmaps_api import calculate_scores 
 import webbrowser
 from dnn import run_dnn_model
+from spotify_api import get_top_artist_genre
 
 # Step 1: Authenticate user and fetch Spotify data
-print("🎵 Running Spotify API script...")
-os.system("python3 spotify_api.py")
-
+#print("🎵 Running Spotify API script...")
+#os.system("python3 spotify_api.py")
+#
 # Check if the Spotify data file was created
-if not os.path.exists("spotify_data.json"):
-    raise FileNotFoundError("spotify_data.json not found. Please check spotify_api.py execution.")
+#if not os.path.exists("spotify_data.json"):
+ #   raise FileNotFoundError("spotify_data.json not found. Please check spotify_api.py execution.")
+
+get_top_artist_genre()
 
 print("Spotify data fetched successfully.")
 
