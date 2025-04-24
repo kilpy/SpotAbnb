@@ -9,6 +9,7 @@ import googlemaps_api
 import dnn
 import spotify_api
 import ticketmaster_api
+import XGBoost
 
 # Step 1: Authenticate user and fetch Spotify data
 print("🎵 Running Spotify API script...")
@@ -56,13 +57,14 @@ googlemaps_api.calculate_scores(df.iloc[0], airbnb_df, GMAPS_KEY)
 
 print("Scoring complete. final_airbnb_dataset.csv updated with distance, price, and total score.")
 
-print("Step 4: Running DNN model and generating recommendations...")
-#os.system("python3 dnn.py")
+# XGBoost model
+print("Step 4: Running XGBoost model and generating recommendations...")
+XGBoost.run_xgboost_model(df.iloc[0]['event_name'] if 'event_name' in df.columns else "an upcoming concert")
 
-# df = pd.read_csv("final_airbnb_dataset.csv")
+print("Step 5: Running DNN model and generating recommendations...")
 
-# df.columns.tolist()
-dnn.run_dnn_model(df.iloc[0]['event_name'] if 'event_name' in df.columns else "an upcoming concert")
+# dnn.run_dnn_model(df.iloc[0]['event_name'] if 'event_name' in df.columns else "an upcoming concert")
+
 
 
 # Step 5: Open the HTML report with top Airbnb links
