@@ -15,14 +15,14 @@ Open main.py and run the file.
 
 IMPORTANT: on line 19, the function call to spotify's api is commented out. 
 The way Spotify manages their tokens is that they expire every hour due to security. 
-As a work around, I've left my spotify_data.json file within.
-Simply running main.py will take the data extracted from this file for the rest of the file (which should be fine). 
+As a work around, we've left our spotify_data.json file within.
+Simply running main.py as is will take the data extracted from this file for the rest of the file (which should be fine). 
 
 HOWEVER, should you want to run it with your own spotify account login, then please email us. (jiwani.a@northeastern.edu or garey.b@northeastern.edu) 
-Spotify's API requires us to approve users with a token that expires. We will try to add you before you test it, but we need your email associated with spotify to do so. 
+Spotify's API requires us to approve users with a token that expires. We will try to add you before you test it, but we need your email associated with your spotify account to do so. 
 
-Once added, AND uncommented line 19, delete spotify_data.json (and .cache if it is there). 
-This should force you to log in to spotify.
+Once added, AND uncommented line 19, delete .cache if it is there. 
+Running again should force you to log in to spotify. 
 ##############################
 Overview
 

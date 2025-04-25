@@ -15,7 +15,7 @@ import XGBoost
 print("🎵 Running Spotify API script...")
 
 # Uncomment below to run the Spotify API script:
-    # Requires user authentication from the authors (Arzoo and Brent) that once you are logged in, you can run the script without needing to re-authenticate.
+    # IMPORTANT: Requires user authentication from the authors (Arzoo and Brent) to grant you a token that once you are logged in, you can run the script without needing to re-authenticate.
 # spotify_api.get_top_artist_genre()
 
 # Check if the Spotify data file was created
