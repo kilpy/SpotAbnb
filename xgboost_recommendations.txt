@@ -1,18 +1,18 @@
 Hey there! Based on your favorite artist, check out these Airbnbs for their upcoming concert: The Living Tombstone (16 & Over)
 
 XGBoost: Top 10 Recommended Airbnbs:
-ID: 2350883, Score: 1.0000
-ID: 9182754, Score: 1.0000
+ID: 9087285, Score: 1.0000
+ID: 8731224, Score: 1.0000
+ID: 6499870, Score: 1.0000
+ID: 9172067, Score: 1.0000
+ID: 2095959, Score: 1.0000
+ID: 3354459, Score: 1.0000
+ID: 9778579, Score: 1.0000
+ID: 645922, Score: 1.0000
+ID: 8322478, Score: 1.0000
 ID: 6837529, Score: 1.0000
-ID: 753991, Score: 1.0000
-ID: 6494312, Score: 1.0000
-ID: 8951083, Score: 1.0000
-ID: 9104108, Score: 1.0000
-ID: 1551044, Score: 1.0000
-ID: 6528060, Score: 1.0000
-ID: 2459916, Score: 1.0000
 
-Accuracy: 0.9996
-Precision: 0.9996
-Recall: 0.9996
-F1 Score: 0.9996
+Accuracy: 0.9986
+Precision: 0.9986
+Recall: 0.9986
+F1 Score: 0.9986
