@@ -4,9 +4,9 @@
 
 ### REQUIRED FILES: ###
 ensure you have a file called .env that contains the following API keys:
-DISCOVERY_KEY = 
-GMAPS_KEY = 
-SPOTIFY_KEY = 
+DISCOVERY_KEY = REDACTED
+GMAPS_KEY = REDACTED
+SPOTIFY_KEY = REDACTED
 ########################
 
 HOW TO RUN:
