@@ -3,9 +3,6 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-import seaborn as sns
-import webbrowser
 import os
 from sklearn.metrics import accuracy_score
 
@@ -58,12 +55,12 @@ def run_dnn_model(event_name):
         loss = criterion(outputs, y_train_tensor)
         loss.backward()
         optimizer.step()
-
+    # Testing
     with torch.no_grad():
         test_probs = model(X_test_tensor).numpy().flatten()
         test_preds = (test_probs >= 0.5).astype(int)
         accuracy = accuracy_score(y_test, test_preds)
-    print(f"\n✅ DNN Model Accuracy on Test Set: {accuracy:.4f}")
+    print(f"\nDNN Model Accuracy on Test Set: {accuracy:.4f}")
     # Predictions
     with torch.no_grad():
         all_features_tensor = torch.tensor(df_model[features].values, dtype=torch.float32)
@@ -77,20 +74,6 @@ def run_dnn_model(event_name):
         lambda url: f'<a href="{url}" target="_blank">{url}</a>'
     )
     top_10_links = top_10[['id', 'listing_url', 'predicted_proba']]
-
-    # Visualization
-    #plt.figure(figsize=(12, 6))
-    #sorted_probs = df_model['predicted_proba'].sort_values(ascending=False).reset_index(drop=True)
-    #plt.plot(sorted_probs, marker='o', linestyle='', alpha=0.6)
-    #plt.axhline(top_10['predicted_proba'].min(), color='red', linestyle='--', label="Top 10 Cutoff")
-    #plt.title('Sorted Predicted Probabilities')
-    #plt.xlabel('Listing Order (Most to Least Likely to be Booked)')
-    #plt.ylabel('Probability of Booking')
-    #plt.legend()
-    #plt.grid(True)
-    #plt.tight_layout()
-    #plt.savefig("dnn_prediction_plot.png")
-    #plt.close()
 
 
     # Save and open HTML report
@@ -112,9 +95,8 @@ def run_dnn_model(event_name):
         </html>
         """)
 
-    print(f"\n✅ DNN Predictions saved to: {output_file}")
+    print(f"\n DNN Predictions saved to: {output_file}")
     return output_file  # So main.py can open this
 
 
-#if __name__ == "__main__":
-#    run_dnn_model(event_name)
+
